@@ -1,54 +1,56 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "melton_hero": {
+      "type": "melton-hero",
+      "settings": {
+        "eyebrow": "Your local independent yarn shop",
+        "heading": "Find something lovely for your next make",
+        "text": "<p>Discover beautiful yarns, inspiring patterns and thoughtful supplies for knitters and crocheters of every level.</p>",
+        "button_label": "Shop yarn",
+        "button_link": "shopify://collections/all",
+        "secondary_button_label": "Browse collections",
+        "secondary_button_link": "shopify://collections",
+        "note": "Friendly advice online and in our Melton Mowbray shop",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "welcome": {
+      "type": "rich-text",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Made for makers",
+            "heading_size": "h1"
           }
         },
-        "button": {
-          "type": "buttons",
+        "text": {
+          "type": "text",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>Whether you are choosing your very first ball of yarn or planning your next big project, we are here to help you find just the right thing.</p>"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["heading", "text"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 44
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Fresh from the shelves",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "full_width": false,
@@ -63,13 +65,14 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 36,
+        "padding_bottom": 72
       }
     }
   },
   "order": [
-    "image_banner",
+    "melton_hero",
+    "welcome",
     "featured_collection"
   ]
 }
