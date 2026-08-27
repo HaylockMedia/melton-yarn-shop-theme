@@ -1,0 +1,111 @@
+.melton-hero {
+  overflow: hidden;
+}
+
+.melton-hero__inner {
+  display: grid;
+  gap: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.melton-hero__content {
+  align-self: center;
+  padding: 1rem 0;
+}
+
+.melton-hero__eyebrow {
+  margin: 0 0 1.4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.melton-hero__heading {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 7.8rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+
+.melton-hero__text {
+  max-width: 58rem;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  line-height: 1.55;
+}
+
+.melton-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.6rem;
+}
+
+.melton-hero__note {
+  margin: 1.6rem 0 0;
+  font-size: 1.3rem;
+  opacity: .75;
+}
+
+.melton-hero__media {
+  min-height: 36rem;
+  overflow: hidden;
+  border-radius: 2.4rem 2.4rem 8rem 2.4rem;
+}
+
+.melton-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.melton-hero__media--placeholder {
+  display: grid;
+  min-height: 40rem;
+  place-items: end start;
+  background:
+    linear-gradient(135deg, rgba(var(--color-foreground), .04), rgba(var(--color-foreground), .14)),
+    rgb(var(--color-background));
+  border: .1rem solid rgba(var(--color-foreground), .12);
+}
+
+.melton-hero__placeholder {
+  display: grid;
+  gap: .4rem;
+  padding: 3rem;
+}
+
+.melton-hero__placeholder span {
+  font-size: 1.4rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.melton-hero__placeholder strong {
+  font-family: var(--font-heading-family);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1;
+}
+
+@media screen and (min-width: 990px) {
+  .melton-hero__inner {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    min-height: 66rem;
+    gap: 6rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .melton-hero__media {
+    min-height: 56rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .melton-hero__buttons .button {
+    flex: 1 1 100%;
+  }
+}
