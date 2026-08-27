@@ -1,0 +1,129 @@
+{{ 'section-melton-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="melton-hero color-{{ section.settings.color_scheme }} gradient">
+  <div class="melton-hero__inner page-width">
+    <div class="melton-hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="melton-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="melton-hero__heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="melton-hero__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      <div class="melton-hero__buttons">
+        {%- if section.settings.button_label != blank -%}
+          <a class="button button--primary" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+            {{ section.settings.button_label | escape }}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.secondary_button_label != blank -%}
+          <a class="button button--secondary" href="{{ section.settings.secondary_button_link | default: routes.collections_url }}">
+            {{ section.settings.secondary_button_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.note != blank -%}
+        <p class="melton-hero__note">{{ section.settings.note | escape }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="melton-hero__media{% if section.settings.image == blank %} melton-hero__media--placeholder{% endif %}">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1800
+          | image_tag:
+            widths: '550, 750, 1100, 1500, 1800',
+            sizes: '(min-width: 990px) 52vw, 100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'melton-hero__image',
+            alt: section.settings.image.alt
+        }}
+      {%- else -%}
+        <div class="melton-hero__placeholder" aria-hidden="true">
+          <span>Beautiful yarns</span>
+          <strong>Chosen with care</strong>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Melton hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Your local independent yarn shop"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find something lovely for your next make"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Discover yarns, patterns and thoughtful supplies for knitters and crocheters of every level.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "Shop yarn"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary button label",
+      "default": "Browse collections"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary button link"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Small note",
+      "default": "Friendly advice online and in our Melton Mowbray shop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Melton hero"
+    }
+  ]
+}
+{% endschema %}
