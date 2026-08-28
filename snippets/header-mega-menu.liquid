@@ -21,7 +21,7 @@
                     class="header__active-menu-item"
                   {% endif %}
                 >
-                  {{- link.title | escape -}}
+                  {{- link.title | replace: 'Catalog', 'Products' | escape -}}
                 </span>
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </summary>
@@ -44,7 +44,7 @@
                           aria-current="page"
                         {% endif %}
                       >
-                        {{ childlink.title | escape }}
+                        {{ childlink.title | replace: 'Catalog', 'Products' | escape }}
                       </a>
                       {%- if childlink.links != blank -%}
                         <ul class="list-unstyled" role="list">
@@ -58,7 +58,7 @@
                                   aria-current="page"
                                 {% endif %}
                               >
-                                {{ grandchildlink.title | escape }}
+                                {{ grandchildlink.title | replace: 'Catalog', 'Products' | escape }}
                               </a>
                             </li>
                           {%- endfor -%}
@@ -84,7 +84,7 @@
                 class="header__active-menu-item"
               {% endif %}
             >
-              {{- link.title | escape -}}
+              {{- link.title | replace: 'Catalog', 'Products' | escape -}}
             </span>
           </a>
         {%- endif -%}
