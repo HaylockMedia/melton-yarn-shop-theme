@@ -82,7 +82,7 @@
         {%- else -%}
           <a
             id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
+            href="{{ link.url }}{% if link.handle == 'classes' or link.handle == 'about' or link.handle == 'gallery' %}?view={{ link.handle }}{% endif %}"
             class="header__menu-item list-menu__item link link--text focus-inset"
             {% if link.current %}
               aria-current="page"

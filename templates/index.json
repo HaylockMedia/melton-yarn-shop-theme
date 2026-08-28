@@ -56,7 +56,7 @@
         "heading_size": "h1",
         "text": "<p>Learn something new, meet other yarn lovers and enjoy relaxed, friendly classes in the shop.</p>",
         "button_label": "View classes & book",
-        "button_link": "/pages/classes",
+        "button_link": "/pages/classes?view=classes",
         "color_scheme": "scheme-2"
       }
     },
