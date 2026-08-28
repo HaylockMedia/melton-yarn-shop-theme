@@ -1,0 +1,37 @@
+{{ 'section-gallery-grid.css' | asset_url | stylesheet_tag }}
+
+<section class="gallery-grid color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="gallery-grid__header">
+      <h1 class="gallery-grid__heading">{{ section.settings.heading | escape }}</h1>
+      {%- if section.settings.text != blank -%}<div class="rte">{{ section.settings.text }}</div>{%- endif -%}
+    </div>
+    <div class="gallery-grid__items">
+      {%- for block in section.blocks -%}
+        <figure class="gallery-grid__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '360, 550, 750, 1100, 1400', sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw', class: 'gallery-grid__image', alt: block.settings.image.alt }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'gallery-grid__placeholder placeholder-svg' }}
+          {%- endif -%}
+          {%- if block.settings.caption != blank -%}<figcaption>{{ block.settings.caption | escape }}</figcaption>{%- endif -%}
+        </figure>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gallery grid",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Gallery" },
+    { "type": "richtext", "id": "text", "label": "Introduction", "default": "<p>A look inside Melton Yarn Shop, our classes and our community of makers.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Colour scheme", "default": "scheme-1" }
+  ],
+  "blocks": [{ "type": "image", "name": "Image", "settings": [{ "type": "image_picker", "id": "image", "label": "Image" }, { "type": "text", "id": "caption", "label": "Caption" }] }],
+  "presets": [{ "name": "Gallery grid", "blocks": [{ "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }] }]
+}
+{% endschema %}

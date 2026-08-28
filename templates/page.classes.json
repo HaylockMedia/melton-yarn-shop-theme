@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "classes-showcase",
+      "blocks": {
+        "class_1": { "type": "class", "settings": { "date": "Date to be announced", "title": "New class coming soon", "description": "<p>Add the class description, skill level and what is included.</p>", "price": "Price coming soon", "link_label": "Book now" } }
+      },
+      "block_order": ["class_1"],
+      "settings": { "eyebrow": "Learn with us", "heading": "Classes & bookings", "heading_size": "h0", "text": "<p>Browse our upcoming classes and reserve your place online.</p>", "button_label": "", "color_scheme": "scheme-1" }
+    }
+  },
+  "order": ["main"]
+}
