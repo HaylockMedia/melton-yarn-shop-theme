@@ -506,3 +506,43 @@
     }
   }
 }
+
+
+/* Melton Yarn Shop footer contact and newsletter layout */
+@media screen and (min-width: 750px) {
+  .footer__content-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(32rem, 1fr);
+    align-items: start;
+    column-gap: clamp(4rem, 8vw, 12rem);
+  }
+
+  .footer__blocks-wrapper {
+    width: 100%;
+  }
+
+  .footer__blocks-wrapper .footer-block.grid__item,
+  .footer__blocks-wrapper .footer-block:only-child:last-child {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  .footer-block--newsletter {
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .footer-block__newsletter {
+    max-width: 42rem;
+    margin-left: auto;
+    text-align: left;
+  }
+
+  .footer-block__newsletter .newsletter-form {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
