@@ -126,7 +126,7 @@
                   {%- else -%}
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
+                      href="{{ link.url }}{% if link.handle == 'classes' or link.handle == 'about' or link.handle == 'gallery' %}?view={{ link.handle }}{% endif %}"
                       class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
                       {% if link.current %}
                         aria-current="page"
