@@ -48,6 +48,18 @@
         "color_scheme": "scheme-1"
       }
     },
+    "classes_promo": {
+      "type": "classes-showcase",
+      "settings": {
+        "eyebrow": "Learn with us",
+        "heading": "Classes at Melton Yarn Shop",
+        "heading_size": "h1",
+        "text": "<p>Learn something new, meet other yarn lovers and enjoy relaxed, friendly classes in the shop.</p>",
+        "button_label": "View classes & book",
+        "button_link": "/pages/classes",
+        "color_scheme": "scheme-2"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -80,6 +92,7 @@
   "order": [
     "melton_hero",
     "welcome",
+    "classes_promo",
     "stockist_logos",
     "featured_collection"
   ]
