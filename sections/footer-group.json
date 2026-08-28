@@ -4,8 +4,18 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "contact_details": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact us",
+            "subtext": "<p><strong>Phone:</strong> <a href=\"tel:07887408765\">07887 408765</a></p><p><strong>Email:</strong> <a href=\"mailto:meltonyarnshop@gmail.com\">meltonyarnshop@gmail.com</a></p><p><strong>Address:</strong><br>4 Bowley Court<br>Melton Mowbray<br>LE13 1XY</p>"
+          }
+        }
+      },
+      "block_order": [
+        "contact_details"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
