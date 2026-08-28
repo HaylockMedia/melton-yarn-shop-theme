@@ -1,0 +1,57 @@
+{{ 'section-stockist-logos.css' | asset_url | stylesheet_tag }}
+
+<section class="stockist-logos color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width">
+    <div class="stockist-logos__heading-wrap">
+      <p class="stockist-logos__eyebrow">Brands we love</p>
+      <h2 class="stockist-logos__heading">{{ section.settings.heading | escape }}</h2>
+    </div>
+
+    <div class="stockist-logos__scroller" role="region" aria-label="Brands stocked by Melton Yarn Shop" tabindex="0">
+      <ul class="stockist-logos__list" role="list">
+        {%- assign brand_names = 'Milward|Emma Ball|KnitPro|Pony|Prym|Luca-S|Katia|James C. Brett|Stylecraft|King Cole' | split: '|' -%}
+        {%- assign brand_files = 'stockist-milward.webp|stockist-emma-ball.jpg|stockist-knitpro.jpg|stockist-pony.png|stockist-prym.png|stockist-luca-s.webp|stockist-katia.webp|stockist-james-brett.webp|stockist-stylecraft.png|stockist-king-cole.webp' | split: '|' -%}
+
+        {%- for brand_name in brand_names -%}
+          <li class="stockist-logos__item">
+            <img
+              class="stockist-logos__image stockist-logos__image--{{ forloop.index }}"
+              src="{{ brand_files[forloop.index0] | asset_url }}"
+              alt="{{ brand_name | escape }}"
+              width="220"
+              height="120"
+              loading="lazy"
+            >
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Stockist logos",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We are proud to stock"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stockist logos"
+    }
+  ]
+}
+{% endschema %}
