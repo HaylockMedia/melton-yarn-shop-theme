@@ -41,6 +41,13 @@
         "padding_bottom": 44
       }
     },
+    "stockist_logos": {
+      "type": "stockist-logos",
+      "settings": {
+        "heading": "We are proud to stock",
+        "color_scheme": "scheme-1"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -73,6 +80,7 @@
   "order": [
     "melton_hero",
     "welcome",
+    "stockist_logos",
     "featured_collection"
   ]
 }
