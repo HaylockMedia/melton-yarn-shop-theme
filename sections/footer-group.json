@@ -11,10 +11,18 @@
             "heading": "Contact us",
             "subtext": "<p><strong>Phone:</strong> <a href=\"tel:07887408765\">07887 408765</a></p><p><strong>Email:</strong> <a href=\"mailto:meltonyarnshop@gmail.com\">meltonyarnshop@gmail.com</a></p><p><strong>Address:</strong><br>4 Bowley Court<br>Melton Mowbray<br>LE13 1XY</p>"
           }
+        },
+        "opening_times": {
+          "type": "text",
+          "settings": {
+            "heading": "Opening times",
+            "subtext": "<p><strong>Tuesday:</strong> 9am–4:30pm<br><strong>Wednesday:</strong> 9am–4:30pm<br><strong>Thursday:</strong> 9am–4:30pm<br><strong>Friday:</strong> 9am–4:30pm<br><strong>Saturday:</strong> 9am–4:30pm</p>"
+          }
         }
       },
       "block_order": [
-        "contact_details"
+        "contact_details",
+        "opening_times"
       ],
       "settings": {
         "color_scheme": "scheme-1",
