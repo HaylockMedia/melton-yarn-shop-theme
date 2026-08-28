@@ -81,3 +81,13 @@
     width: auto;
   }
 }
+
+
+/* The portrait Pony logo needs a smaller dedicated frame than the wide brand marks. */
+.stockist-logos__image--4 {
+  width: auto;
+  max-width: 7rem;
+  height: auto;
+  max-height: 7rem;
+  object-fit: contain;
+}
