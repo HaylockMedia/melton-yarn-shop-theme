@@ -8,6 +8,7 @@
     </div>
     <div class="gallery-grid__items">
       {%- for block in section.blocks -%}
+        {%- if block.settings.image != blank or block.settings.theme_asset != blank -%}
         <figure class="gallery-grid__item" {{ block.shopify_attributes }}>
           {%- if block.settings.image != blank -%}
             {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '360, 550, 750, 1100, 1400', sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw', class: 'gallery-grid__image', alt: block.settings.image.alt }}
@@ -20,11 +21,10 @@
               width="1400"
               height="1050"
             >
-          {%- else -%}
-            {{ 'image' | placeholder_svg_tag: 'gallery-grid__placeholder placeholder-svg' }}
           {%- endif -%}
           {%- if block.settings.caption != blank -%}<figcaption>{{ block.settings.caption | escape }}</figcaption>{%- endif -%}
         </figure>
+        {%- endif -%}
       {%- endfor -%}
     </div>
   </div>
