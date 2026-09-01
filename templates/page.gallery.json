@@ -3,9 +3,9 @@
     "main": {
       "type": "gallery-grid",
       "blocks": {
-        "image_1": { "type": "image", "settings": {} },
-        "image_2": { "type": "image", "settings": {} },
-        "image_3": { "type": "image", "settings": {} },
+        "image_1": { "type": "image", "settings": { "theme_asset": "gallery-shopfront.jpg", "alt_text": "Melton Yarn Shop storefront at Bowley Court", "caption": "Welcome to Melton Yarn Shop" } },
+        "image_2": { "type": "image", "settings": { "theme_asset": "gallery-branded-counter.jpg", "alt_text": "Purple Melton Yarn Shop branded counter inside the shop", "caption": "Our newly branded shop counter" } },
+        "image_3": { "type": "image", "settings": { "theme_asset": "gallery-team-celebration.jpg", "alt_text": "The Melton Yarn Shop team holding a celebration cake among shelves of yarn", "caption": "Celebrating a new chapter for Melton Yarn Shop" } },
         "image_4": { "type": "image", "settings": {} },
         "image_5": { "type": "image", "settings": {} },
         "image_6": { "type": "image", "settings": {} }

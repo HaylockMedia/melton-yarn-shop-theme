@@ -11,6 +11,15 @@
         <figure class="gallery-grid__item" {{ block.shopify_attributes }}>
           {%- if block.settings.image != blank -%}
             {{ block.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '360, 550, 750, 1100, 1400', sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw', class: 'gallery-grid__image', alt: block.settings.image.alt }}
+          {%- elsif block.settings.theme_asset != blank -%}
+            <img
+              src="{{ block.settings.theme_asset | asset_url }}"
+              class="gallery-grid__image"
+              alt="{{ block.settings.alt_text | escape }}"
+              loading="lazy"
+              width="1400"
+              height="1050"
+            >
           {%- else -%}
             {{ 'image' | placeholder_svg_tag: 'gallery-grid__placeholder placeholder-svg' }}
           {%- endif -%}
@@ -31,7 +40,7 @@
     { "type": "richtext", "id": "text", "label": "Introduction", "default": "<p>A look inside Melton Yarn Shop, our classes and our community of makers.</p>" },
     { "type": "color_scheme", "id": "color_scheme", "label": "Colour scheme", "default": "scheme-1" }
   ],
-  "blocks": [{ "type": "image", "name": "Image", "settings": [{ "type": "image_picker", "id": "image", "label": "Image" }, { "type": "text", "id": "caption", "label": "Caption" }] }],
+  "blocks": [{ "type": "image", "name": "Image", "settings": [{ "type": "image_picker", "id": "image", "label": "Image" }, { "type": "text", "id": "theme_asset", "label": "Theme image filename", "info": "Used for gallery images supplied with the theme." }, { "type": "text", "id": "alt_text", "label": "Image description" }, { "type": "text", "id": "caption", "label": "Caption" }] }],
   "presets": [{ "name": "Gallery grid", "blocks": [{ "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }] }]
 }
 {% endschema %}
