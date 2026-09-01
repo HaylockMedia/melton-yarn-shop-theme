@@ -3,7 +3,9 @@
 .gallery-grid__heading { margin: 0 0 1.2rem; font-size: clamp(4rem, 7vw, 7rem); }
 .gallery-grid__items { display: grid; gap: 1.5rem; }
 .gallery-grid__item { margin: 0; overflow: hidden; background: rgba(var(--color-foreground), .05); border-radius: 1.6rem; }
-.gallery-grid__image, .gallery-grid__placeholder { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery-grid__image { display: block; width: 100%; height: auto; }
 .gallery-grid__item figcaption { padding: 1.2rem 1.4rem; font-size: 1.3rem; }
-@media screen and (min-width: 750px) { .gallery-grid__items { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media screen and (min-width: 990px) { .gallery-grid__items { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media screen and (min-width: 750px) {
+  .gallery-grid__items { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .gallery-grid__item:first-child { grid-column: 1 / -1; }
+}
