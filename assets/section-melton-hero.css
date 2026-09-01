@@ -56,10 +56,16 @@
   border-radius: 2.4rem 2.4rem 8rem 2.4rem;
 }
 
+.melton-hero__media--image {
+  min-height: 0;
+  align-self: center;
+  background: rgb(var(--color-background));
+}
+
 .melton-hero__image {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 .melton-hero__media--placeholder {
@@ -99,7 +105,7 @@
     padding-bottom: 5rem;
   }
 
-  .melton-hero__media {
+  .melton-hero__media:not(.melton-hero__media--image) {
     min-height: 56rem;
   }
 }
