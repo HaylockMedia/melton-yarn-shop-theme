@@ -11,6 +11,8 @@
         "secondary_button_label": "Browse collections",
         "secondary_button_link": "shopify://collections",
         "note": "Friendly advice online and in our Melton Mowbray shop",
+        "theme_asset": "gallery-shopfront.jpg",
+        "alt_text": "Melton Yarn Shop storefront at Bowley Court with the team standing in the doorway",
         "color_scheme": "scheme-2"
       }
     },

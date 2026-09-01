@@ -33,7 +33,7 @@
       {%- endif -%}
     </div>
 
-    <div class="melton-hero__media{% if section.settings.image == blank %} melton-hero__media--placeholder{% endif %}">
+    <div class="melton-hero__media{% if section.settings.image != blank or section.settings.theme_asset != blank %} melton-hero__media--image{% else %} melton-hero__media--placeholder{% endif %}">
       {%- if section.settings.image != blank -%}
         {{
           section.settings.image
@@ -46,6 +46,16 @@
             class: 'melton-hero__image',
             alt: section.settings.image.alt
         }}
+      {%- elsif section.settings.theme_asset != blank -%}
+        <img
+          src="{{ section.settings.theme_asset | asset_url }}"
+          class="melton-hero__image"
+          alt="{{ section.settings.alt_text | escape }}"
+          loading="eager"
+          fetchpriority="high"
+          width="1800"
+          height="1350"
+        >
       {%- else -%}
         <div class="melton-hero__placeholder" aria-hidden="true">
           <span>Beautiful yarns</span>
@@ -84,6 +94,17 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "theme_asset",
+      "label": "Theme image filename",
+      "info": "Used for an image supplied with the theme."
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Image description"
     },
     {
       "type": "text",
